@@ -1,0 +1,109 @@
+body {
+  height: 100%;
+}
+
+.navbar {
+  height: 40px;
+  width: 100%;
+  background-color: rgb(48, 136, 107);
+}
+
+.left {
+  height: 100%;
+  width: 50%;
+  font-size: 25px;
+  float: left;
+}
+
+.right {
+  height: 100%;
+  width: 50%;
+  float: right;
+  font-size: 25px;
+}
+
+.wrapper {
+  margin-top: 100px;
+}
+
+.message {
+  margin-left: 42.5%;
+}
+
+.logbtn {
+  margin-left: 213px;
+  margin-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(44, 44, 238);
+  color: aliceblue;
+  font-size: medium;
+
+}
+
+.logbtn:disabled {
+  background-color: darkgrey;
+  color: black;
+}
+
+.try-btn{
+  margin-top: 50px;
+  margin-left: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(44, 44, 238);
+  color: aliceblue;
+  font-size: medium;
+}
+
+.new-btn {
+  margin-top: 150px;
+  margin-left: 143px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(44, 44, 238);
+  color: aliceblue;
+  font-size: medium;
+}
+
+.form {
+  height: 150px;
+  font-size: larger;
+  display: flex;
+  align-items: center;
+}
+
+.player1 {
+  margin-right: 50px;
+  margin-left: 20px;
+}
+
+.player2 {
+  margin-bottom: 2px;
+  margin-right: 0px;
+}
+
+.square {
+  height: 99px;
+  width: 99px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+}
+
+.board {
+  background-color: aqua;
+  margin: auto;
+  height: 302px;
+  width: 302px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
