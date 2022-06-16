@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -6,8 +6,10 @@ import Login from "./Login";
 import Navbar from "./Navbar";
 import Game from "./Game";
 import Endgame from "./Endgame";
+import { getFromLocal } from "./helper";
 
 function App() {
+  const [square, setSquare] = useState(Array(9).fill(null));
   const [status, setStatus] = useState("");
   const [show, setShow] = useState(true);
   const [player1, setPlayer1] = useState("");
@@ -16,9 +18,13 @@ function App() {
   const [p2Score, setP2Score] = useState(0);
   const [ties, setTies] = useState(0);
   const [gameDone, setGameDone] = useState(false);
-  
+  const [isX, setIsX] = useState(true);
+  const [prevGames, setPrevGames] = useState([])
 
-  
+  useEffect(() => {
+    setPrevGames(getFromLocal("game") || [])
+  }, [gameDone])
+
   return (
     <div className="App">
       <header>
@@ -39,6 +45,8 @@ function App() {
         setPlayer2={setPlayer2}
       />
       <Game
+        isX={isX}
+        setIsX={setIsX}
         player1={player1}
         player2={player2}
         setP1Score={setP1Score}
@@ -47,14 +55,27 @@ function App() {
         setGameDone={setGameDone}
         status={status}
         setStatus={setStatus}
+        square={square}
+        setSquare={setSquare}
       />
-      <Endgame
+      {gameDone && <Endgame
+        isX={isX}
+        setIsX={setIsX}
         player1={player1}
         player2={player2}
-        show={gameDone}
-        setShow={setGameDone}
+        gameDone={gameDone}
+        setGameDone={setGameDone}
         status={status}
-      />
+        setStatus={setStatus}
+        setSquare={setSquare}
+        setP1Score={setP1Score}
+        setP2Score={setP2Score}
+        setTies={setTies}
+        setPlayer1={setPlayer1}
+        setPlayer2={setPlayer2}
+        setShow={setShow}
+        prevGames={prevGames}
+      />}
     </div>
   );
 }
