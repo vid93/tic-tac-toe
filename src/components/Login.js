@@ -12,8 +12,8 @@ function Login({ show, setShow, setPlayer1, setPlayer2, player1, player2 }) {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    height: 375,
-    width: 500,
+    height: '55%',
+    width: '45%',
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -21,7 +21,6 @@ function Login({ show, setShow, setPlayer1, setPlayer2, player1, player2 }) {
   };
 
   const gameStart = () => {
-    // put colected names in local storage
     setShow(false);
     
   };

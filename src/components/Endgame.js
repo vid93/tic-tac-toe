@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { saveToLocal } from "./helper";
+import { saveToLocal } from "../helper";
 
 import { Modal } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -43,8 +43,8 @@ function Endgame({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    height: 500,
-    width: 400,
+    height: '55%',
+    width: '45%',
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
@@ -63,6 +63,7 @@ function Endgame({
     setStatus("");
     setShow(true);
     setIsX(true);
+    localStorage.clear();
   };
 
   const tryAgain = () => {

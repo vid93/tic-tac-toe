@@ -7,8 +7,10 @@ function Navbar({player1, player2, p1Score, p2Score, ties}) {
             Tic-Tac-Toe
         </div>
         <div className='right'>
-            {player1}: {p1Score}     |
-            {player2}: {p2Score}     |
+            {player1}: {p1Score}
+            <br/>
+            {player2}: {p2Score}
+            <br/>
             Ties: {ties}
         </div>
     </div>

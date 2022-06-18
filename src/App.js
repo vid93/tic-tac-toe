@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import "./App.css";
 
-import Login from "./Login";
-import Navbar from "./Navbar";
-import Game from "./Game";
-import Endgame from "./Endgame";
+import Login from "./components/Login";
+import Navbar from "./components/Navbar";
+import Game from "./components/Game";
+import Endgame from "./components/Endgame";
 import { getFromLocal } from "./helper";
 
 function App() {
