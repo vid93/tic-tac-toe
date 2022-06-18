@@ -21,7 +21,7 @@ function Endgame({
   setTies,
   setPlayer1,
   setPlayer2,
-  prevGames
+  prevGames,
 }) {
   var today = new Date();
   var date =
@@ -43,12 +43,13 @@ function Endgame({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    height: '55%',
-    width: '45%',
+    height: "55%",
+    width: "45%",
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,
     p: 4,
+    textAlign: 'center'
   };
 
   const newGame = () => {
@@ -76,20 +77,20 @@ function Endgame({
   return (
     <Modal open={gameDone}>
       <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h3" component="h2">
+        <Typography id="modal-modal-title" variant="h5" component="h5">
           {status}
         </Typography>
         <button className="try-btn" onClick={tryAgain}>
           Try Again
         </button>
-        {prevGames.map((game, index) => (
-          <h3 key={index}>
-            {game.player1} vs {game.player2} --{game.time}-- {game.score}
-          </h3>
-        ))}
         <button className="new-btn" onClick={newGame}>
           New Game
         </button>
+        {prevGames.map((game, index) => (
+          <h4 key={index}>
+            {game.player1} vs {game.player2} | {game.time} | {game.score}
+          </h4>
+        ))}
       </Box>
     </Modal>
   );
